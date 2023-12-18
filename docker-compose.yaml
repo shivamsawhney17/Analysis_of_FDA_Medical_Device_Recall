@@ -76,12 +76,12 @@ x-airflow-common:
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
     _PIP_ADDITIONAL_REQUIREMENTS: "requests pyarrow>=10.0.1 pandas sqlalchemy boto3 psycopg2-binary pyspark"
-    aws_access_key_id : 'AKIA46ITI7LDY77YK36O'
-    aws_secret_access_key : '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'
+    aws_access_key_id : ''
+    aws_secret_access_key : ''
 
     DB_NAME: 'open-fda'
-    DB_USER: 'postgres'
-    DB_PASSWORD: 'Attackontitan1'
+    DB_USER: ''
+    DB_PASSWORD: ''
 
 # DB instance identifier:dc-db-instance
 # Master username:postgres

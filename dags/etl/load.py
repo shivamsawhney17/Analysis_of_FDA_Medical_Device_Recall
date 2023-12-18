@@ -10,7 +10,7 @@ def load_data(**kwargs):
     df_status = get_object(f'transformed/{date}_status_dim.csv')
     df_cause = get_object(f'transformed/{date}_cause_dim.csv')
 
-    db_url = 'postgresql+psycopg2://postgres:Attackontitan1@redshift-cluster-1.cbjh50ytpqj5.us-east-2.redshift.amazonaws.com:5439/open-fda'
+    db_url = 'postgresql+psycopg2://@redshift-cluster-1.cbjh50ytpqj5.us-east-2.redshift.amazonaws.com:5439/open-fda'
 
     engine = create_engine(db_url)
     

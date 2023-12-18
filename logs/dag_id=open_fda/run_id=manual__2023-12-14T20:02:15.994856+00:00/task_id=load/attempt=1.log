@@ -1,0 +1,16 @@
+[2023-12-14T20:02:58.442+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: open_fda.load manual__2023-12-14T20:02:15.994856+00:00 [queued]>
+[2023-12-14T20:02:58.446+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: open_fda.load manual__2023-12-14T20:02:15.994856+00:00 [queued]>
+[2023-12-14T20:02:58.446+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-14T20:02:58.452+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load> on 2023-12-14 20:02:15.994856+00:00
+[2023-12-14T20:02:58.456+0000] {standard_task_runner.py:57} INFO - Started process 131 to run task
+[2023-12-14T20:02:58.459+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'open_fda', 'load', 'manual__2023-12-14T20:02:15.994856+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/outcome_dag.py', '--cfg-path', '/tmp/tmpwrbdvfu2']
+[2023-12-14T20:02:58.460+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask load
+[2023-12-14T20:02:58.492+0000] {task_command.py:416} INFO - Running <TaskInstance: open_fda.load manual__2023-12-14T20:02:15.994856+00:00 [running]> on host 4cda6adcea31
+[2023-12-14T20:02:58.537+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='open_fda' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2023-12-14T20:02:15.994856+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-14T20:02:15.994856+00:00'
+[2023-12-14T20:02:58.539+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2023-12-14T20:19:20.773+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-12-14T20:19:20.822+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=open_fda, task_id=load, execution_date=20231214T200215, start_date=20231214T200258, end_date=20231214T201920
+[2023-12-14T20:19:20.879+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-14T20:19:20.893+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

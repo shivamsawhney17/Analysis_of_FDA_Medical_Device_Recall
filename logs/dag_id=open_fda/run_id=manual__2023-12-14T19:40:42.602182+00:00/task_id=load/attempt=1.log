@@ -1,0 +1,19 @@
+[2023-12-14T19:41:25.745+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: open_fda.load manual__2023-12-14T19:40:42.602182+00:00 [queued]>
+[2023-12-14T19:41:25.748+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: open_fda.load manual__2023-12-14T19:40:42.602182+00:00 [queued]>
+[2023-12-14T19:41:25.748+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-14T19:41:25.753+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load> on 2023-12-14 19:40:42.602182+00:00
+[2023-12-14T19:41:25.757+0000] {standard_task_runner.py:57} INFO - Started process 75 to run task
+[2023-12-14T19:41:25.760+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'open_fda', 'load', 'manual__2023-12-14T19:40:42.602182+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/outcome_dag.py', '--cfg-path', '/tmp/tmpak08ktb3']
+[2023-12-14T19:41:25.761+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask load
+[2023-12-14T19:41:25.791+0000] {task_command.py:416} INFO - Running <TaskInstance: open_fda.load manual__2023-12-14T19:40:42.602182+00:00 [running]> on host 56fd4118eea6
+[2023-12-14T19:41:25.835+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='open_fda' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2023-12-14T19:40:42.602182+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-14T19:40:42.602182+00:00'
+[2023-12-14T19:41:25.837+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2023-12-14T19:54:53.316+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2023-12-14T19:54:53.328+0000] {process_utils.py:131} INFO - Sending 15 to group 75. PIDs of all processes in the group: [75]
+[2023-12-14T19:54:53.329+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 75
+[2023-12-14T19:57:17.407+0000] {process_utils.py:149} WARNING - process psutil.Process(pid=75, name='airflow task ru', status='sleeping', started='19:41:25') did not respond to SIGTERM. Trying SIGKILL
+[2023-12-14T19:57:17.425+0000] {process_utils.py:86} INFO - Sending the signal 9 to group 75
+[2023-12-14T19:57:17.484+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=75, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='19:41:25') (75) terminated with exit code -9
+[2023-12-14T19:57:17.487+0000] {standard_task_runner.py:172} ERROR - Job 5 was killed before it finished (likely due to running out of memory)

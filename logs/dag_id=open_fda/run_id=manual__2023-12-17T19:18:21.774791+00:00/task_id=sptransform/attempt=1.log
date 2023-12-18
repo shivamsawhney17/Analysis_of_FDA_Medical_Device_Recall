@@ -1,0 +1,35 @@
+[2023-12-17T19:39:58.305+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: open_fda.sptransform manual__2023-12-17T19:18:21.774791+00:00 [queued]>
+[2023-12-17T19:39:58.309+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: open_fda.sptransform manual__2023-12-17T19:18:21.774791+00:00 [queued]>
+[2023-12-17T19:39:58.309+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-12-17T19:39:58.314+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): sptransform> on 2023-12-17 19:18:21.774791+00:00
+[2023-12-17T19:39:58.318+0000] {standard_task_runner.py:57} INFO - Started process 448 to run task
+[2023-12-17T19:39:58.321+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'open_fda', 'sptransform', 'manual__2023-12-17T19:18:21.774791+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/outcome_dag.py', '--cfg-path', '/tmp/tmp4zvrdssy']
+[2023-12-17T19:39:58.322+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask sptransform
+[2023-12-17T19:39:58.357+0000] {task_command.py:416} INFO - Running <TaskInstance: open_fda.sptransform manual__2023-12-17T19:18:21.774791+00:00 [running]> on host 89a31972db24
+[2023-12-17T19:39:58.394+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='open_fda' AIRFLOW_CTX_TASK_ID='sptransform' AIRFLOW_CTX_EXECUTION_DATE='2023-12-17T19:18:21.774791+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-17T19:18:21.774791+00:00'
+[2023-12-17T19:39:58.397+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2023-12-17T19:39:59.640+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl/sparktransform.py", line 21, in spark_transform
+    spark = SparkSession.builder.appName("transform").getOrCreate()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 497, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 515, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 201, in __init__
+    SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/context.py", line 436, in _ensure_initialized
+    SparkContext._gateway = gateway or launch_gateway(conf)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/java_gateway.py", line 107, in launch_gateway
+    raise PySparkRuntimeError(
+pyspark.errors.exceptions.base.PySparkRuntimeError: [JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.
+[2023-12-17T19:39:59.652+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=open_fda, task_id=sptransform, execution_date=20231217T191821, start_date=20231217T193958, end_date=20231217T193959
+[2023-12-17T19:39:59.660+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 6 for task sptransform ([JAVA_GATEWAY_EXITED] Java gateway process exited before sending its port number.; 448)
+[2023-12-17T19:39:59.680+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-17T19:39:59.693+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

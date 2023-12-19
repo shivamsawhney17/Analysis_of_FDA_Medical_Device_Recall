@@ -62,4 +62,4 @@
    - Use GitHub Actions for continuous integration and automated testing.
    - Encourage collaboration through pull requests and utilize GitHub Issues for tracking tasks.
 
-![Architecture Diagram][https://github.com/Shouvik-7/Analysis_of_FDA_Medical_Device_Recall/blob/db8384ca65efecb4aca274673c7ce8a541cea69e/Data/Architecture-Diagram.png]
+![Architecture Diagram][Data/Architecture-Diagram.png] 

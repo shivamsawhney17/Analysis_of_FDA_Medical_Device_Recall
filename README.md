@@ -62,4 +62,4 @@
    - Use GitHub Actions for continuous integration and automated testing.
    - Encourage collaboration through pull requests and utilize GitHub Issues for tracking tasks.
 
-![Architecture Diagram][Data/Architecture-Diagram.png] 
+![Architecture Diagram](Data/Architecture-Diagram.png)
